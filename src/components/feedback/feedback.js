@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
-import 
+import style from './feedback.module.css'
 
 class Feedback extends Component {
     static defaultProps = {
@@ -16,13 +16,13 @@ class Feedback extends Component {
     render() {
         
         return (
-            <section>
-                <h1>feedback form</h1>
-                <h2>Please leave feedback</h2>
-                <div>
-                    <button type="button">good</button>
-                    <button type="button">neutral</button>
-                    <button type="button">bad</button>
+            <section className={style.feedback}>
+                <h1 className={style.feedback__header}>feedback form</h1>
+                <h2 className={style.feedback__subheader}>Please leave feedback</h2>
+                <div className={style.feedback__buttonWrap}>
+                    <button className={style.feedback__button} type="button">good</button>
+                    <button className={style.feedback__button} type="button">neutral</button>
+                    <button className={style.feedback__button} type="button">bad</button>
                 </div>
                 <h2>Statics</h2>
                 <ul>
