@@ -27,9 +27,10 @@ class Feedback extends Component {
         // bad: prevState.good + 1,
     }));
     };
-    // countTotalFeedback() {
-    //     return this.state.good + this.state.neutral + this.state.bad
-    // }
+
+    // countTotalFeedback = () => 
+    //     this.state.good + this.state.neutral + this.state.bad
+    
 
     render() {
         
