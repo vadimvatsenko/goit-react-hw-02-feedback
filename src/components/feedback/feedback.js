@@ -20,16 +20,31 @@ class Feedback extends Component {
         bad: this.props.bad,
     }
 
-    handleIncrement = () => {
+    goodIncrement = () => {
     this.setState(prevState => ({
         good: prevState.good + 1,
-        // neutral: prevState.neutral + 1,
-        // bad: prevState.good + 1,
+    }));
+    };
+    neutralIncrement = () => {
+    this.setState(prevState => ({
+        neutral: prevState.neutral + 1,
+    }));
+    };
+    badIncrement = () => {
+    this.setState(prevState => ({
+        bad: prevState.bad + 1,
     }));
     };
 
-    // countTotalFeedback = () => 
-    //     this.state.good + this.state.neutral + this.state.bad
+    countTotalFeedback = () => 
+         this.state.good + this.state.neutral + this.state.bad
+        
+    
+
+    countPositiveFeedbackPercentage = () =>
+        Number.parseInt(this.state.good / (this.state.good + this.state.neutral + this.state.bad) * 100)
+       
+    
     
 
     render() {
@@ -39,9 +54,9 @@ class Feedback extends Component {
                 <h1 className={style.feedback__header}>feedback form</h1>
                 <h2 className={style.feedback__subheader}>Please leave feedback</h2>
                 <div className={style.feedback__buttonWrap}>
-                    <button className={style.feedback__button} type="button" onClick={this.handleIncrement}>good</button>
-                    <button className={style.feedback__button} type="button">neutral</button>
-                    <button className={style.feedback__button} type="button">bad</button>
+                    <button className={style.feedback__button} type="button" onClick={this.goodIncrement}>good</button>
+                    <button className={style.feedback__button} type="button" onClick={this.neutralIncrement}>neutral</button>
+                    <button className={style.feedback__button} type="button" onClick={this.badIncrement}>bad</button>
                 </div>
                 <h2>Statics</h2>
                 <ul>
@@ -60,7 +75,11 @@ class Feedback extends Component {
                 </ul>
                 <div>
                     <span>Total: </span>
-                    <span>{this.countTotalFeedback}</span>  
+                    <span>{ this.countTotalFeedback()}</span>  
+                </div>
+                <div>
+                    <span>Positive feedback: </span>
+                    <span>{this.countPositiveFeedbackPercentage()}%</span>
                 </div>
 
             </section>
