@@ -1,11 +1,79 @@
-import React from "react";
-import Feedback from "./feedback/feedback";
+import React, { Component } from "react";
+import Section from './section/section';
+import Buttons from "./buttons/buttons";
+import Statistics from "./statistics/statistics";
+import PropTypes from 'prop-types';
 
-export const App = () => {
-  return (
-    <div>
-      
-      <Feedback/>
-   </div>
-  );
-};
+
+export class App extends Component {
+    static defaultProps = {
+        good: 0,
+        neutral: 0,
+        bad: 0,
+    }
+
+    static propTypes = {
+
+        //
+    }
+
+    state = {
+        good: this.props.good,
+        neutral: this.props.neutral,
+        bad: this.props.bad,
+    }
+
+    goodIncrement = () => {
+    this.setState(prevState => ({
+        good: prevState.good + 1,
+    }));
+    };
+    neutralIncrement = () => {
+    this.setState(prevState => ({
+        neutral: prevState.neutral + 1,
+    }));
+    };
+    badIncrement = () => {
+    this.setState(prevState => ({
+        bad: prevState.bad + 1,
+    }));
+    };
+
+    countTotalFeedback = () => 
+         this.state.good + this.state.neutral + this.state.bad
+        
+    
+
+    countPositiveFeedbackPercentage = () =>
+        Number.parseInt(this.state.good / (this.state.good + this.state.neutral + this.state.bad) * 100)
+       
+    
+    
+
+    render() {
+        
+        return (
+          <Section
+            title = {'statictics form'}
+            subtitle={'Please leave feedback'}>
+                <Buttons
+                    goodIncrement={this.goodIncrement}
+                    neutralIncrement={this.neutralIncrement}
+                    badIncrement={this.badIncrement} />
+
+                
+                <Statistics
+                    title={'Statistics'}
+                    good={this.state.good}
+                    neutral={this.state.neutral}
+                    bad={this.state.bad}
+                    total={this.countTotalFeedback()}
+                    percentage={this.countPositiveFeedbackPercentage()}
+                />
+               
+
+           </Section>
+        );
+    }
+}
+

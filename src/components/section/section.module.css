@@ -1,7 +1,7 @@
 .feedback {
     text-align: center;
     padding: 20px;
-    
+
     width: 400px;
     height: auto;
     background-color: rgb(217, 255, 255);
@@ -13,11 +13,11 @@
     box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
 }
 
-.feedback__header{
+.feedback__header {
     font-size: 0;
 }
 
 .feedback__subheader {
-    color:rgb(39, 112, 112);
+    color: rgb(39, 112, 112);
     text-align: center;
 }

@@ -1,8 +1,9 @@
 
 
 
-export default function Statistics({ good, neutral, bad, total, percentage }) {
+export default function Statistics({ title, good, neutral, bad, total, percentage }) {
     return (
+        <Text>{title}</Text>
         <ul>
             <li>
                 <span>Good: </span>
