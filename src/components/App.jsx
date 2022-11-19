@@ -14,8 +14,9 @@ export class App extends Component {
     }
 
     static propTypes = {
-
-        //
+      good: PropTypes.number.isRequired,
+      neutral: PropTypes.number.isRequired,
+      bad: PropTypes.number.isRequired,
     }
 
     state = {
@@ -51,7 +52,8 @@ export class App extends Component {
     
     
 
-    render() {
+  render() {
+      // const {good, neutral, bad} = this.props
         
       return (
         <Section

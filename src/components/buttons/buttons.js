@@ -1,6 +1,6 @@
 import style from './buttons.module.css';
 
-export default function Buttons({goodIncrement, neutralIncrement, badIncrement }) {
+export default function Buttons({ goodIncrement, neutralIncrement, badIncrement }) {
     return (
         <div className={style.feedback__buttonWrap}>
                     <button className={style.feedback__button} type="button" onClick={goodIncrement}>good</button>
