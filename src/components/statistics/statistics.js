@@ -9,15 +9,15 @@ export default function Statistics({ title, good, neutral, bad, total, percentag
             <ul>
                 <li>
                     <span>Good: </span>
-                    <span>{good}</span>
+                    <span className={style.good}>{good}</span>
                 </li>
                 <li>
                     <span>Neutral: </span>
-                    <span>{neutral}</span>
+                    <span className={style.neutral}>{neutral}</span>
                 </li>
                 <li>
                     <span>Bad: </span>
-                    <span>{bad}</span>
+                    <span className={style.bad}>{bad}</span>
                 </li>
                 
                 <li>

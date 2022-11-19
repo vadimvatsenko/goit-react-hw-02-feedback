@@ -23,10 +23,21 @@
 }
 
 .feedback__button:hover {
-    background: #2EE59D;
-    box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+    background-color: rgb(255, 255, 0);
+    box-shadow: 0 15px 20px rgba(255, 255, 0, 0.4);
     color: white;
     transform: translateY(-7px);
+}
+
+.feedback__button:first-child:hover {
+    background: #00ff99;
+    box-shadow: 0 15px 20px rgba(0, 255, 13, 0.4);
+}
+
+.feedback__button:last-child:hover {
+    background: #ff0000;
+    box-shadow: 0 15px 20px rgba(255, 0, 0, 0.4);
+    
 }
 
 .feedback__button+.feedback__button {
