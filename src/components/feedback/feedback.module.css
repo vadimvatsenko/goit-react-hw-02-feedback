@@ -21,24 +21,3 @@
     color:rgb(39, 112, 112);
     text-align: center;
 }
-.feedback__buttonWrap {
-    display: block;
-    margin-top: 20px;
-}
-.feedback__button {
-    /* display: inline-block; */
-    background-color: rgb(39, 112, 112);;
-    width: 60px;
-    height: 30px;
-    border-radius: 5px;
-    transition: all 300ms linear
-}
-.feedback__button:hover,
-.feedback__button:focus {
-    background-color: rgb(98, 98, 255);
-    color:rgb(217, 255, 255)
-}
-
-.feedback__button + .feedback__button {
-    margin-left: 10px;
-}
