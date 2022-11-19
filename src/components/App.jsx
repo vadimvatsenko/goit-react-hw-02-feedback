@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Section from './section/section';
 import Buttons from "./buttons/buttons";
 import Statistics from "./statistics/statistics";
+import Notification from "components/notification/notification";
 import PropTypes from 'prop-types';
 
 
@@ -52,28 +53,31 @@ export class App extends Component {
 
     render() {
         
-        return (
-          <Section
-            title = {'statictics form'}
-            subtitle={'Please leave feedback'}>
-                <Buttons
-                    goodIncrement={this.goodIncrement}
-                    neutralIncrement={this.neutralIncrement}
-                    badIncrement={this.badIncrement} />
+      return (
+        <Section
+          title={'statictics form'}
+          subtitle={'Please leave feedback'}>
+          <Buttons
+            goodIncrement={this.goodIncrement}
+            neutralIncrement={this.neutralIncrement}
+            badIncrement={this.badIncrement} />
 
+          {this.countTotalFeedback() ?
+            <Statistics
+              title={'Statistics'}
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              percentage={this.countPositiveFeedbackPercentage()}
+            /> :
                 
-                <Statistics
-                    title={'Statistics'}
-                    good={this.state.good}
-                    neutral={this.state.neutral}
-                    bad={this.state.bad}
-                    total={this.countTotalFeedback()}
-                    percentage={this.countPositiveFeedbackPercentage()}
-                />
+            <Notification message="There is no feedback" />
+          }
                
 
-           </Section>
-        );
-    }
+        </Section>
+      );
+  }
 }
 
