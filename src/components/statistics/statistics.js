@@ -29,6 +29,7 @@ export default function Statistics({ title, good, neutral, bad, total, percentag
                     <span>{percentage ? percentage : 0}%</span>
                 </li>
             </ul>
+            
         </div>
 
     );
