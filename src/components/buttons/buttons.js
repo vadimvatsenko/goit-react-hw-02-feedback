@@ -1,3 +1,4 @@
+//DONE
 import style from './buttons.module.css';
 
 export default function Buttons({ goodIncrement, neutralIncrement, badIncrement }) {

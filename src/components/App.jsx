@@ -66,7 +66,7 @@ export class App extends Component {
 
           {this.countTotalFeedback() ?
             <Statistics
-              title={'Statistics'}
+              title='Statistics'
               good={this.state.good}
               neutral={this.state.neutral}
               bad={this.state.bad}

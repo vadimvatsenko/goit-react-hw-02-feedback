@@ -1,10 +1,11 @@
+/* DONE */
 .feedback {
     text-align: center;
     padding: 20px;
 
-    width: 400px;
+    width: 600px;
     height: auto;
-    background-color: rgb(217, 255, 255);
+    background-color: rgb(238, 252, 252);
     margin: 0 auto;
     margin-top: 10vh;
 

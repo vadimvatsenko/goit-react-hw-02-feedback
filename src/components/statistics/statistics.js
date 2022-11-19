@@ -1,9 +1,10 @@
-
+//DONE
 import PropTypes from 'prop-types';
+import style from './statistics.module.css'
 
 export default function Statistics({ title, good, neutral, bad, total, percentage }) {
     return (
-        <div>
+        <div className={style.statictics}>
             <h2>{title}</h2>
             <ul>
                 <li>
