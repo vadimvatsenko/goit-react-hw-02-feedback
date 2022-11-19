@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Section from './section/section';
-import Buttons from "./buttons/buttons";
+import FeedbackOptions from "./feedbackOptions/FeedbackOptions";
 import Statistics from "./statistics/statistics";
 import Notification from "components/notification/notification";
 import PropTypes from 'prop-types';
@@ -23,23 +23,32 @@ export class App extends Component {
         good: this.props.good,
         neutral: this.props.neutral,
         bad: this.props.bad,
-    }
+  }
+  
 
-    goodIncrement = () => {
-    this.setState(prevState => ({
-        good: prevState.good + 1,
-    }));
-    };
-    neutralIncrement = () => {
-    this.setState(prevState => ({
-        neutral: prevState.neutral + 1,
-    }));
-    };
-    badIncrement = () => {
-    this.setState(prevState => ({
-        bad: prevState.bad + 1,
-    }));
-    };
+
+    // goodIncrement = () => {
+    // this.setState(prevState => ({
+    //     good: prevState.good + 1,
+    // }));
+    // };
+    // neutralIncrement = () => {
+    // this.setState(prevState => ({
+    //     neutral: prevState.neutral + 1,
+    // }));
+    // };
+    // badIncrement = () => {
+    // this.setState(prevState => ({
+    //     bad: prevState.bad + 1,
+    // }));
+    // };
+  
+  onLeaveFeedback = (e) => {
+		const name = e.target.name;
+		this.setState((prevState) => ({
+			[name]: prevState[name] + 1
+		}));
+	};
 
     countTotalFeedback = () => 
          this.state.good + this.state.neutral + this.state.bad
@@ -54,16 +63,20 @@ export class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+
+    const objKey = Object.keys(this.state);
   
         
       return (
         <Section
           title={'statictics form'}
           subtitle={'Please leave feedback'}>
-          <Buttons
+          {/* <Buttons
             goodIncrement={this.goodIncrement}
             neutralIncrement={this.neutralIncrement}
-            badIncrement={this.badIncrement} />
+            badIncrement={this.badIncrement} /> */}
+          <FeedbackOptions options={objKey} onLeaveFeedback={this.onLeaveFeedback} />
+
 
           {this.countTotalFeedback() ?
             <Statistics
