@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/vadimvatsenko/goit-react-hw-02-feedback/static/css/main.58f17b8c.css",
-    "main.js": "/vadimvatsenko/goit-react-hw-02-feedback/static/js/main.f879efb1.js",
+    "main.js": "/vadimvatsenko/goit-react-hw-02-feedback/static/js/main.c53b7f5b.js",
     "index.html": "/vadimvatsenko/goit-react-hw-02-feedback/index.html",
     "main.58f17b8c.css.map": "/vadimvatsenko/goit-react-hw-02-feedback/static/css/main.58f17b8c.css.map",
-    "main.f879efb1.js.map": "/vadimvatsenko/goit-react-hw-02-feedback/static/js/main.f879efb1.js.map"
+    "main.c53b7f5b.js.map": "/vadimvatsenko/goit-react-hw-02-feedback/static/js/main.c53b7f5b.js.map"
   },
   "entrypoints": [
     "static/css/main.58f17b8c.css",
-    "static/js/main.f879efb1.js"
+    "static/js/main.c53b7f5b.js"
   ]
 }
