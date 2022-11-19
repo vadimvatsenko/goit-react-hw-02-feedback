@@ -3,6 +3,19 @@ import PropTypes from 'prop-types';
 import style from './statistics.module.css'
 
 export default function Statistics({ title, good, neutral, bad, total, percentage }) {
+    function color() {
+        if (percentage <= 33) {
+            return '#ff0000'
+        }
+          if (percentage <= 76) {
+            return '#FFFF00'
+        } 
+        if (percentage >= 77) {
+            return '#00ff99'
+       
+            
+        }  
+    }
     return (
         <div className={style.statictics}>
             <h2>{title}</h2>
@@ -25,8 +38,10 @@ export default function Statistics({ title, good, neutral, bad, total, percentag
                     <span>{total}</span>
                 </li>
                 <li>
-                    <span>Positive feedback: </span>
-                    <span>{percentage ? percentage : 0}%</span>
+                    <span >Positive feedback: </span>
+                    
+                  
+                  <span style={{color: color()}}>{percentage ? percentage : 0}%</span>
                 </li>
             </ul>
             
