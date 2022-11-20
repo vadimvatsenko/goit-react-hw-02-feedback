@@ -1,4 +1,4 @@
-//DONE//
+//DONE
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import style from './FeedbackOptions.module.css';
